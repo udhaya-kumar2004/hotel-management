@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - DreamStay Hotel</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: center;
+    }
+
+  .top-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 999;
+}
+
+.home-btn, #logoutBtn {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.home-btn:hover, #logoutBtn:hover {
+  background-color: #005fa3;
+}
+
+#logoutBtn {
+  display: none; /* hidden by default */
+}
+
+
+.gallery {
+  overflow: hidden;
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.slider-track {
+  display: flex;
+  gap: 16px;
+  animation: slide 40s linear infinite;
+}
+
+.slider-track img {
+  max-height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+
+    .user-info {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #0077cc;
+      z-index: 999;
+    }
+
+    h1 {
+      padding: 20px;
+      background-color: #0077cc;
+      color: white;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding: 20px;
+      scroll-behavior: smooth;
+      background-color: #fff;
+    }
+
+    .gallery img {
+      max-height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      flex-shrink: 0;
+    }
+
+    .gallery::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .gallery::-webkit-scrollbar-thumb {
+      background-color: #0077cc;
+      border-radius: 10px;
+    }
+	
+	.gallery img {
+  user-select: auto;
+  cursor: pointer; /* Optional: show it's interactive */
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); } /* move full width of images */
+}
+.gallery img.selected {
+  outline: 4px solid #0077cc;
+}
+
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+#caption {
+  margin: auto;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ccc;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- User Info -->
+  <div class="user-info" id="userInfo"></div>
+
+  <!-- Buttons -->
+  <div class="top-buttons">
+    <button class="home-btn" onclick="location.href='index.html'">🏠 Home</button>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <h1>About Us</h1>
+  <p>
+    Welcome to DreamStay Hotel! We're passionate about hospitality and providing our guests with luxurious, comfortable, and unforgettable experiences. Explore our gallery to get a glimpse of what we offer.
+  </p>
+<div class="gallery">
+  <div class="slider-track">
+  <!-- Original + duplicate set -->
+
+	<img src="images/lobby.jpg" alt="Hotel Lobby" onclick="selectImage(this)">
+    <img src="images/dining.jpg" alt="Dining" onclick="selectImage(this)">
+    <img src="images/wellnesspa.jpg" alt="Wellness Spa" onclick="selectImage(this)">
+    <img src="images/oceanview.jpg" alt="Ocean View" onclick="selectImage(this)">
+    <img src="images/doublecot.jpg" alt="Double Cot Room" onclick="selectImage(this)">
+    <img src="images/conference.jpg" alt="Conference Room" onclick="selectImage(this)">
+    <img src="images/Kitchener.jpg" alt="Kitchener Room" onclick="selectImage(this)">
+    <img src="images/casual.jpg" alt="Casual Lounge" onclick="selectImage(this)">
+	
+	
+	      <!-- Duplicate images -->
+	
+	<img src="images/lobby.jpg" alt="Hotel Lobby" onclick="selectImage(this)">
+    <img src="images/dining.jpg" alt="Dining" onclick="selectImage(this)">
+    <img src="images/wellnesspa.jpg" alt="Wellness Spa" onclick="selectImage(this)">
+    <img src="images/oceanview.jpg" alt="Ocean View" onclick="selectImage(this)">
+    <img src="images/doublecot.jpg" alt="Double Cot Room" onclick="selectImage(this)">
+    <img src="images/conference.jpg" alt="Conference Room" onclick="selectImage(this)">
+    <img src="images/Kitchener.jpg" alt="Kitchener Room" onclick="selectImage(this)">
+    <img src="images/casual.jpg" alt="Casual Lounge" onclick="selectImage(this)">
+	
+  </div>
+</div>
+
+
+<script>
+  const userInfo = document.getElementById('userInfo');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  const userName = localStorage.getItem("userName");
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+  if (isLoggedIn === "true" && userName) {
+    userInfo.textContent = `Welcome, ${userName}`;
+    logoutBtn.style.display = "inline-block"; // 👈 Show logout only if logged in
+  } else {
+    userInfo.textContent = "";
+    logoutBtn.style.display = "none"; // 👈 Hide logout if not logged in
+  }
+
+  logoutBtn.addEventListener("click", () => {
+    if (confirm("Are you sure you want to log out?")) {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "Login.html";
+    }
+  });
+  
+
+</script>
+
+<script>function selectImage(img) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const caption = document.getElementById("caption");
+
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  caption.innerText = img.alt;
+}
+
+// Close modal on click of "X"
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector(".close").onclick = function () {
+    document.getElementById("imageModal").style.display = "none";
+  };
+
+  // Optional: close modal when clicking outside the image
+  document.getElementById("imageModal").onclick = function (e) {
+    if (e.target === this) {
+      this.style.display = "none";
+    }
+  };
+});
+
+</script>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div id="caption"></div>
+</div>
+
+
+
+
+</body>
+</html>
+
